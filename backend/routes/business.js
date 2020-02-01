@@ -1,5 +1,6 @@
 const router = require('express').Router();
 let Business = require('../models/business.model');
+let Charity = require('../models/charity.model');
 
 router.route('/').get((req, res) => {
   Business.find()
@@ -19,7 +20,13 @@ router.route('/add').post((req, res) => {
   });
 
   newBusiness.save()
-    .then(() => res.json('Business added!'))
+    .then(function (newBusiness) {
+      Charity.find({
+        mission: newBusiness.values,
+      }).then((charities) => {
+        res.json(charities)
+      }).catch(err => res.status(400).json('Error: ' + err))
+    })
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
