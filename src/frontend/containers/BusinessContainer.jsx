@@ -128,7 +128,7 @@ class BusinessContainer extends Component {
         {/*Submit */}
         <Button
           action={this.handleClearForm}
-          type={"secondary"}
+          type={"primary"}
           title={"Clear"}
           style={buttonStyle}
         />{" "}
