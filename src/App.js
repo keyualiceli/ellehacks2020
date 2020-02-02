@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessContainer from "./frontend/containers/BusinessContainer.jsx";
 import CharityContainer from "./frontend/containers/CharityContainer.jsx";
+import LandingContainer from "./frontend/containers/LandingContainer.jsx";
 import './App.css';
 
 function App() {
@@ -8,8 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <div className="col-md-6">
-        <h1> Charity </h1>
-        <CharityContainer />
+        <LandingContainer />
       </div>
       </header>
     </div>
