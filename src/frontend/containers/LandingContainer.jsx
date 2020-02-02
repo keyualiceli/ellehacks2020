@@ -31,7 +31,7 @@ class LandingContainer extends Component {
           this.setState({response: 1});
         }}
           type={"primary"}
-          title={"Business"}
+          title={"Donor"}
           style={buttonStyle}
         />{" "}
         <Button
@@ -39,7 +39,7 @@ class LandingContainer extends Component {
             this.setState({response: 2});
           }}
           type={"primary"}
-          title={"Charity"}
+          title={"Reciever"}
           style={buttonStyle}
         />{" "}
       </form>
