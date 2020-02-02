@@ -19,7 +19,7 @@ class BusinessContainer extends Component {
       },
 
       valuesOptions: ["Sustainability", "Community", "Health", "Financial Security"],
-      giveOptions: ["Food", "Clothing", "People", "Money", "Other"],
+      giveOptions: ["Food", "Clothing", "People", "Money", "Electronics", "Other"],
       response: []
     };
     this.handleFullName = this.handleFullName.bind(this);
@@ -94,13 +94,13 @@ class BusinessContainer extends Component {
     }
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-        <h1>Business</h1>
+        <h1>Donor</h1>
         <Input
           inputType={"text"}
           title={"Business Name"}
           name={"name"}
           value={this.state.newBusiness.name}
-          placeholder={"Enter business name"}
+          placeholder={"Enter name"}
           handleChange={this.handleInput}
         />{" "}
         {/* Name of the user */}
