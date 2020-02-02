@@ -1,60 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BusinessContainer from "./BusinessContainer.jsx";
 import CharityContainer from "./CharityContainer.jsx";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import Button from "../components/Button";
 
+class LandingContainer extends Component {
+  constructor(props) {
+    super(props);
 
-function LandingContainer() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/business">Business</Link>
-            </li>
-            <li>
-              <Link to="/charity">Charity</Link>
-            </li>
-          </ul>
-        </nav>
+    this.state = {
+      response: 0
+    };
+  }
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/business">
-            <BusinessContainer />
-          </Route>
-          <Route path="/charity">
-            <CharityContainer />
-          </Route>
-          <Route path="/">
-            <LandingContainer />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-
-function Home() {
-  return <h2>CommuniLnk</h2>;
+  render() {
+    if (this.state.response === 1) {
+      return (
+        <BusinessContainer />
+      )
+    }
+    if (this.state.response === 2) {
+      return (
+        <CharityContainer />
+      )
+    }
+    return (
+      <form className="container-fluid">
+        <h1>communilnk</h1>
+        <Button
+        action={() => {
+          this.setState({response: 1});
+        }}
+          type={"primary"}
+          title={"Business"}
+          style={buttonStyle}
+        />{" "}
+        <Button
+          action={() => {
+            this.setState({response: 2});
+          }}
+          type={"primary"}
+          title={"Charity"}
+          style={buttonStyle}
+        />{" "}
+      </form>
+    );
+  }
 }
 
-function Business() {
-  return <h2>Business</h2>;
-}
-
-function Charity() {
-  return <h2>Charity</h2>;
-}
-}
+const buttonStyle = {
+  margin: "10px 10px 10px 10px"
+};
 
 export default LandingContainer;

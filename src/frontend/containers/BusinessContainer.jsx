@@ -94,6 +94,7 @@ class BusinessContainer extends Component {
     }
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
+        <h1>Business</h1>
         <Input
           inputType={"text"}
           title={"Business Name"}

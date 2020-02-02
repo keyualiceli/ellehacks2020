@@ -94,6 +94,7 @@ class CharityContainer extends Component {
     }
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
+        <h1>Charity</h1>
         <Input
           inputType={"text"}
           title={"Charity Name"}
