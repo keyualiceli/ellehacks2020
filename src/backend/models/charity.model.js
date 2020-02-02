@@ -2,21 +2,20 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const businessSchema = new Schema({
+const charitySchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
     minlength: 3
   },
-  values: {
+  mission: {
     type: String,
     required: true,
     trim: true,
     minlength: 3
   },
-  give: {
+  needs: {
     type: String,
     required: true,
     trim: true,
@@ -27,6 +26,6 @@ const businessSchema = new Schema({
   timestamps: true,
 });
 
-const Business = mongoose.model('Business', businessSchema);
+const Charity = mongoose.model('Charity', charitySchema);
 
-module.exports = Business;
+module.exports = Charity;

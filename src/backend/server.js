@@ -24,6 +24,13 @@ const charityRouter = require('./routes/charity');
 app.use('/business', businessRouter);
 app.use('/charity', charityRouter);
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+const server = app.listen(port, () => {
+  const host = server.address().address;
+  const port = server.address().port;
+
+  console.log(`Example app listening at http://${host}:${port}`);
 });
+
+// app.listen(port, () => {
+//     console.log(`Server is running on port: ${port}`);
+// });

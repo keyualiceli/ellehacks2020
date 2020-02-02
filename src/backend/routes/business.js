@@ -23,6 +23,7 @@ router.route('/add').post((req, res) => {
     .then(function (newBusiness) {
       Charity.find({
         mission: newBusiness.values,
+        needs: newBusiness.give
       }).then((charities) => {
         res.json(charities)
       }).catch(err => res.status(400).json('Error: ' + err))
